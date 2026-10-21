@@ -1,0 +1,350 @@
+/**
+ * Smart College Management Portal - Custom Styling
+ * Compatible with Bootstrap 5.3 & Chart.js
+ */
+
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-subtle: #eff6ff;
+  --secondary-color: #475569;
+  --success-color: #10b981;
+  --success-subtle: #ecfdf5;
+  --warning-color: #f59e0b;
+  --warning-subtle: #fffbeb;
+  --danger-color: #ef4444;
+  --danger-subtle: #fef2f2;
+  --info-color: #06b6d4;
+  --info-subtle: #ecfeff;
+  --body-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --sidebar-width: 260px;
+  --topbar-height: 64px;
+  --transition-speed: 0.25s;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--body-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Header & Topbar
+   ========================================================================== */
+.portal-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  height: var(--topbar-height);
+  box-shadow: var(--shadow-sm);
+  z-index: 1030;
+}
+
+.brand-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.brand-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   App Layout & Sidebar
+   ========================================================================== */
+.portal-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.portal-sidebar {
+  width: var(--sidebar-width);
+  background-color: #ffffff;
+  border-right: 1px solid var(--border-color);
+  min-height: calc(100vh - var(--topbar-height));
+  transition: all var(--transition-speed) ease-in-out;
+  padding: 1.25rem 0.75rem;
+}
+
+.sidebar-heading {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+}
+
+.sidebar-link i {
+  font-size: 1.15rem;
+  width: 24px;
+  text-align: center;
+  color: #64748b;
+  transition: color var(--transition-speed);
+}
+
+.sidebar-link:hover {
+  background-color: var(--primary-subtle);
+  color: var(--primary-color);
+}
+
+.sidebar-link:hover i {
+  color: var(--primary-color);
+}
+
+.sidebar-link.active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.sidebar-link.active i {
+  color: #ffffff;
+}
+
+.portal-main-content {
+  flex: 1;
+  padding: 1.75rem;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Hero & Cards
+   ========================================================================== */
+.hero-banner {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+  color: #ffffff;
+  border-radius: 1rem;
+  padding: 2.25rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.card-stat {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+.stat-icon-blue {
+  background-color: var(--primary-subtle);
+  color: var(--primary-color);
+}
+
+.stat-icon-green {
+  background-color: var(--success-subtle);
+  color: var(--success-color);
+}
+
+.stat-icon-amber {
+  background-color: var(--warning-subtle);
+  color: var(--warning-color);
+}
+
+.stat-icon-cyan {
+  background-color: var(--info-subtle);
+  color: var(--info-color);
+}
+
+.stat-icon-rose {
+  background-color: var(--danger-subtle);
+  color: var(--danger-color);
+}
+
+.card-portal-access {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+}
+
+.card-portal-access:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
+}
+
+/* ==========================================================================
+   Badges and Status Pills
+   ========================================================================== */
+.badge-status {
+  padding: 0.35rem 0.65rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.badge-present {
+  background-color: var(--success-subtle);
+  color: var(--success-color);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-absent {
+  background-color: var(--danger-subtle);
+  color: var(--danger-color);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-late {
+  background-color: var(--warning-subtle);
+  color: var(--warning-color);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-role-admin {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.badge-role-teacher {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.badge-role-student {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+/* ==========================================================================
+   Tables & Data Presentation
+   ========================================================================== */
+.table-portal {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-portal thead th {
+  background-color: #f8fafc;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+}
+
+.table-portal tbody td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+
+.table-portal tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.portal-footer {
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
+  padding: 1.25rem 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: auto;
+}
+
+/* Responsive sidebar */
+@media (max-width: 991.98px) {
+  .portal-sidebar {
+    position: fixed;
+    top: var(--topbar-height);
+    left: -100%;
+    z-index: 1020;
+    height: calc(100vh - var(--topbar-height));
+    box-shadow: var(--shadow-lg);
+  }
+  .portal-sidebar.show {
+    left: 0;
+  }
+  .portal-main-content {
+    padding: 1.25rem;
+  }
+}
